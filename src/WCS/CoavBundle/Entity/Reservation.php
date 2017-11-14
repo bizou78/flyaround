@@ -138,7 +138,7 @@ class Reservation
      */
     public function getPassenger()
     {
-        return $this->passenger;
+        return $this->passengers;
     }
 
     /**
@@ -162,7 +162,7 @@ class Reservation
      */
     public function getFlight()
     {
-        return $this->flight;
+        return $this->flights;
     }
 
     /**

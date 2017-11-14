@@ -495,4 +495,28 @@ class User
     {
         return $this->pilots;
     }
+
+    /**
+     * Add review
+     *
+     * @param \WCS\CoavBundle\Entity\Review $review
+     *
+     * @return User
+     */
+    public function addReview(\WCS\CoavBundle\Entity\Review $review)
+    {
+        $this->reviews[] = $review;
+
+        return $this;
+    }
+
+    /**
+     * Remove review
+     *
+     * @param \WCS\CoavBundle\Entity\Review $review
+     */
+    public function removeReview(\WCS\CoavBundle\Entity\Review $review)
+    {
+        $this->reviews->removeElement($review);
+    }
 }
