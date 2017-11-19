@@ -118,30 +118,6 @@ class Reservation
     }
 
     /**
-     * Set passenger
-     *
-     * @param string $passenger
-     *
-     * @return Reservation
-     */
-    public function setPassenger($passenger)
-    {
-        $this->passenger = $passenger;
-
-        return $this;
-    }
-
-    /**
-     * Get passenger
-     *
-     * @return string
-     */
-    public function getPassenger()
-    {
-        return $this->passengers;
-    }
-
-    /**
      * Set flight
      *
      * @param string $flight

@@ -186,4 +186,10 @@ class PlaneModel
     {
         return $this->isAvailable;
     }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->manufacturer . ' ' . $this->model;
+    }
 }
