@@ -394,4 +394,10 @@ class Flight
     {
         return $this->reservations;
     }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->departure . ' - ' . $this->arrival;
+    }
 }

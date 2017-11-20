@@ -46,7 +46,7 @@ class Reservation
     /**
      * @var string
      *
-     * @ORM\ManyToMany(targetEntity="WCS\CoavBundle\Entity\User", inversedBy="reservations")
+     * @ORM\ManyToMany(targetEntity="WCS\CoavBundle\Entity\Flight", inversedBy="reservations")
      * @ORM\JoinColumn(nullable=false)
      */
     private $flights;
@@ -117,29 +117,6 @@ class Reservation
         return $this->publicationDate;
     }
 
-    /**
-     * Set flight
-     *
-     * @param string $flight
-     *
-     * @return Reservation
-     */
-    public function setFlight($flight)
-    {
-        $this->flight = $flight;
-
-        return $this;
-    }
-
-    /**
-     * Get flight
-     *
-     * @return string
-     */
-    public function getFlight()
-    {
-        return $this->flights;
-    }
 
     /**
      * Set wasDone
@@ -209,11 +186,11 @@ class Reservation
     /**
      * Add flight
      *
-     * @param \WCS\CoavBundle\Entity\User $flight
+     * @param \WCS\CoavBundle\Entity\Flight $flight
      *
      * @return Reservation
      */
-    public function addFlight(\WCS\CoavBundle\Entity\User $flight)
+    public function addFlight(\WCS\CoavBundle\Entity\Flight $flight)
     {
         $this->flights[] = $flight;
 
@@ -223,9 +200,9 @@ class Reservation
     /**
      * Remove flight
      *
-     * @param \WCS\CoavBundle\Entity\User $flight
+     * @param \WCS\CoavBundle\Entity\Flight $flight
      */
-    public function removeFlight(\WCS\CoavBundle\Entity\User $flight)
+    public function removeFlight(\WCS\CoavBundle\Entity\Flight $flight)
     {
         $this->flights->removeElement($flight);
     }
