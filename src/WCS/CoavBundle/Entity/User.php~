@@ -519,4 +519,10 @@ class User
     {
         $this->reviews->removeElement($review);
     }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->firstName . ' ' . $this->lastName;
+    }
 }
