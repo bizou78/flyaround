@@ -29,4 +29,30 @@ class ReviewController extends Controller
             'reviews'   => $reviews
         ));
     }
+
+    /**
+     * Creates a new review entity.
+     *
+     * @Route("/new", name="review_new")
+     * @Method({"GET", "POST"})
+     */
+    public function newAction(Request $request){
+        $review = new Review();
+        $form = $this->createForm('WCS\CoavBundle\Form\ReviewType', $review);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($review);
+            $em->flush();
+
+            return $this->redirectToRoute('review_show', array('id' => $review->getId()));
+        }
+
+        return $this->render('review/new.html.twig', array(
+            'review'    => $review,
+            'form'      => $form->createView()
+        ));
+
+    }
 }
