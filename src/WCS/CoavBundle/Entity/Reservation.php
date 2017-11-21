@@ -38,7 +38,7 @@ class Reservation
     /**
      * @var string
      *
-     * @ORM\ManyToMany(targetEntity="WCS\CoavBundle\Entity\User", mappedBy="reservations")
+     * @ORM\ManyToMany(targetEntity="WCS\CoavBundle\Entity\User", inversedBy="reservations")
      * @ORM\JoinColumn(nullable=false)
      */
     private $passengers;
@@ -216,4 +216,5 @@ class Reservation
     {
         return $this->flights;
     }
+
 }

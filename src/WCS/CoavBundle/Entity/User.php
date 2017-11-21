@@ -15,7 +15,7 @@ class User
 
     /* Adding personal variables and methods */
     /**
-     * @ORM\ManyToMany(targetEntity="WCS\CoavBundle\Entity\Reservation", inversedBy="passengers")
+     * @ORM\ManyToMany(targetEntity="WCS\CoavBundle\Entity\Reservation", mappedBy="passengers")
      * @ORM\JoinColumn(nullable=false)
      */
     private $reservations;
