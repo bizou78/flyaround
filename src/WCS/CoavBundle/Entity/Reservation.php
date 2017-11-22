@@ -217,4 +217,9 @@ class Reservation
         return $this->flights;
     }
 
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->flights . ' ' . $this->passengers . ' ' . $this->id;
+    }
 }
