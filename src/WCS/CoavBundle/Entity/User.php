@@ -102,6 +102,12 @@ class User extends BaseUser
      */
     private $isActive;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="role", type="string", length=16)
+     */
+    private $role;
 
     /**
      * Get id
